@@ -1,0 +1,45 @@
+{
+  "name": "mern-apollo-sequelize-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/../handlers/graphql.js",
+  "scripts": {
+    "dev": "nodemon --experimental-specifier-resolution=node ./handlers/graphql.js",
+    "test": "npx eslint . && nyc tape tests/test_*.js",
+    "start": "npx sls offline --stage local start",
+    "config-dev": "cp serverless.env.dev.yml serverless.env.yml",
+    "start-dev": "npm run config-dev && npx sls offline --printOutput --stage dev start",
+    "start-docker": "npm install && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@growsari/auth": "0.0.10",
+    "@growsari/invoke-lambda": "0.0.21",
+    "@growsari/remove-sls-offline": "0.0.0",
+    "@growsari/request": "0.0.1",
+    "@growsari/response": "0.0.1",
+    "apollo-server": "^2.16.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4",
+    "ajv": "^8.5.0",
+    "apollo-server-lambda": "^2.9.14",
+    "axios": "^0.21.1",
+    "form-data": "^4.0.0",
+    "graphql": "^14.5.8",
+    "graphql-tools": "^4.0.6",
+    "lodash.isempty": "^4.4.0",
+    "lodash.merge": "^4.6.2",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "aws-sdk": "^2.592.0",
+    "eslint": "^6.7.2",
+    "nyc": "^15.0.0",
+    "serverless-offline": "^5.12.1",
+    "tape": "^4.12.1"
+  },
+  "type": "module"
+}
